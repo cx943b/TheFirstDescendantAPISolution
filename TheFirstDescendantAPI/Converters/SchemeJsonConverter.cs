@@ -21,6 +21,8 @@ namespace TheFirstDescendantAPI.Converters
 
             while (reader.Read())
             {
+                if (reader.TokenType == JsonTokenType.StartObject)
+                    continue;
                 if (reader.TokenType == JsonTokenType.EndObject)
                     break;
 
@@ -41,11 +43,6 @@ namespace TheFirstDescendantAPI.Converters
                     PropertyInfo? propInfo = propertyInfos.FirstOrDefault(p => String.Compare(p.Name, propName, StringComparison.OrdinalIgnoreCase) == 0);
                     if (propInfo == null)
                         throw new NullReferenceException(nameof(propInfo));
-
-                    if (propName.StartsWith("perk"))
-                    {
-
-                    }
 
                     propInfo.SetValue(result, JsonSerializer.Deserialize(ref reader, propInfo.PropertyType, options));
                 }

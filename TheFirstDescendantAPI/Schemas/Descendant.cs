@@ -18,7 +18,7 @@ namespace TheFirstDescendantAPI.Schemas
     public class DescendantStat
     {
         public int Level { get; set; }
-        public IEnumerable<DescendantStatDetail> DescendantStatDetails { get; set; } = Enumerable.Empty<DescendantStatDetail>();
+        public IEnumerable<DescendantStatDetail> StatDetails { get; set; } = Enumerable.Empty<DescendantStatDetail>();
 
     }
 
@@ -26,9 +26,10 @@ namespace TheFirstDescendantAPI.Schemas
     public class DescendantStatDetail
     {
         public string StatType { get; set; } = "";
-        public int StatValue { get; set; }
+        public float StatValue { get; set; }
     }
 
+    [JsonConverter(typeof(SchemeJsonConverter<DescendantSkill>))]
     public class DescendantSkill
     {
         public string SkillType { get; set; } = "";

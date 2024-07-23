@@ -18,7 +18,7 @@ namespace TheFirstDescendantAPITests
         public async Task CheckDescendant()
         {
             MetadataInfo metadataInfo = new MetadataInfo(_loggerFac.CreateLogger<MetadataInfo>());
-            Descendant? descendant = await metadataInfo.GetDescendant(_apiClient);
+            IEnumerable<Descendant> descendant = await metadataInfo.GetDescendants(_apiClient);
 
             Assert.NotNull(descendant);
         }

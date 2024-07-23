@@ -14,10 +14,10 @@ namespace TheFirstDescendantAPI
         {
         }
 
-        public async Task<Descendant?> GetDescendant(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO)
+        public async Task<IEnumerable<Descendant>> GetDescendants(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO)
         {
             string reqUrl = $"/static/tfd/meta/{LanguageCodeConverter.Convert(langCode)}/descendant.json";
-            return await RequestToApi<Descendant>(apiClient, reqUrl);
+            return await RequestToApi<IEnumerable<Descendant>>(apiClient, reqUrl) ?? Enumerable.Empty<Descendant>();
         }
     }
 }
