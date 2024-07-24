@@ -3,8 +3,8 @@ using TheFirstDescendantAPI.Converters;
 
 namespace TheFirstDescendantAPI.Schemas
 {
-    [JsonConverter(typeof(SchemeJsonConverter<Descendant>))]
-    public class Descendant
+    [JsonConverter(typeof(SchemeJsonConverter<DescendantMetadata>))]
+    public class DescendantMetadata
     {
         public string DescendantId { get; set; } = "";
         public string DescendantName { get; set; } = "";

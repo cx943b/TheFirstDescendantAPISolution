@@ -14,10 +14,15 @@ namespace TheFirstDescendantAPI
         {
         }
 
-        public async Task<IEnumerable<Descendant>> GetDescendants(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO)
+        public async Task<IEnumerable<DescendantMetadata>> GetDescendants(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO)
         {
             string reqUrl = $"/static/tfd/meta/{LanguageCodeConverter.Convert(langCode)}/descendant.json";
-            return await RequestToApi<IEnumerable<Descendant>>(apiClient, reqUrl) ?? Enumerable.Empty<Descendant>();
+            return await RequestToApi<IEnumerable<DescendantMetadata>>(apiClient, reqUrl) ?? Enumerable.Empty<DescendantMetadata>();
+        }
+        public async Task<IEnumerable<WeaponMeatadata>> GetWeapons(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO)
+        {
+            string reqUrl = $"/static/tfd/meta/{LanguageCodeConverter.Convert(langCode)}/weapon.json";
+            return await RequestToApi<IEnumerable<WeaponMeatadata>>(apiClient, reqUrl) ?? Enumerable.Empty<WeaponMeatadata>();
         }
     }
 }

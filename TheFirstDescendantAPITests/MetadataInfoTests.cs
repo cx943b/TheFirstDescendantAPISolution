@@ -15,12 +15,21 @@ namespace TheFirstDescendantAPITests
         public MetadataInfoTests(ITestOutputHelper output) : base(output) { }
 
         [Fact]
-        public async Task CheckDescendant()
+        public async Task GetDescendant()
         {
             MetadataInfo metadataInfo = new MetadataInfo(_loggerFac.CreateLogger<MetadataInfo>());
-            IEnumerable<Descendant> descendant = await metadataInfo.GetDescendants(_apiClient);
+            IEnumerable<DescendantMetadata> descendant = await metadataInfo.GetDescendants(_apiClient);
 
             Assert.NotNull(descendant);
+        }
+
+        [Fact]
+        public async Task GetWeapons()
+        {
+            MetadataInfo metadataInfo = new MetadataInfo(_loggerFac.CreateLogger<MetadataInfo>());
+            IEnumerable<WeaponMeatadata> weapons = await metadataInfo.GetWeapons(_apiClient);
+
+            Assert.NotNull(weapons);
         }
     }
 }

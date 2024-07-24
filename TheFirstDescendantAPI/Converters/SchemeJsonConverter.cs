@@ -35,10 +35,12 @@ namespace TheFirstDescendantAPI.Converters
                     if (String.IsNullOrEmpty(propName))
                         throw new NullReferenceException(nameof(propName));
 
-                    propName = String.Concat(propName.Split('_'));
-
-                    if(reader.TokenType == JsonTokenType.StartArray)
+                    if (reader.TokenType == JsonTokenType.StartArray)
                         propName += "s";
+                    else if (reader.TokenType == JsonTokenType.Null)
+                        continue;
+
+                    propName = String.Concat(propName.Split('_'));
 
                     PropertyInfo? propInfo = propertyInfos.FirstOrDefault(p => String.Compare(p.Name, propName, StringComparison.OrdinalIgnoreCase) == 0);
                     if (propInfo == null)
