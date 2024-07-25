@@ -21,10 +21,8 @@ namespace TheFirstDescendantAPI.Schemas
     }
 
     [JsonConverter(typeof(SchemeJsonConverter<WeaponBaseStat>))]
-    public class WeaponBaseStat
+    public class WeaponBaseStat : BaseStat
     {
-        public string StatId { get; set; } = "";
-        public float StatValue { get; set; }
     }
     [JsonConverter(typeof(SchemeJsonConverter<FirearmAtk>))]
     public class FirearmAtk

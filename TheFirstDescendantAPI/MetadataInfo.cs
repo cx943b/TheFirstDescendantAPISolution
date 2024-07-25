@@ -24,5 +24,20 @@ namespace TheFirstDescendantAPI
             string reqUrl = $"/static/tfd/meta/{LanguageCodeConverter.Convert(langCode)}/weapon.json";
             return await RequestToApi<IEnumerable<WeaponMeatadata>>(apiClient, reqUrl) ?? Enumerable.Empty<WeaponMeatadata>();
         }
+        public async Task<IEnumerable<ModuleMetadata>> GetModules(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO)
+        {
+            string reqUrl = $"/static/tfd/meta/{LanguageCodeConverter.Convert(langCode)}/module.json";
+            return await RequestToApi<IEnumerable<ModuleMetadata>>(apiClient, reqUrl) ?? Enumerable.Empty<ModuleMetadata>();
+        }
+        public async Task<IEnumerable<ReactorMetadata>> GetReactors(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO)
+        {
+            string reqUrl = $"/static/tfd/meta/{LanguageCodeConverter.Convert(langCode)}/reactor.json";
+            return await RequestToApi<IEnumerable<ReactorMetadata>>(apiClient, reqUrl) ?? Enumerable.Empty<ReactorMetadata>();
+        }
+        public async Task<IEnumerable<ExternalComponentMetadata>> GetExternalComponents(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO)
+        {
+            string reqUrl = $"/static/tfd/meta/{LanguageCodeConverter.Convert(langCode)}/external-component.json";
+            return await RequestToApi<IEnumerable<ExternalComponentMetadata>>(apiClient, reqUrl) ?? Enumerable.Empty<ExternalComponentMetadata>();
+        }
     }
 }

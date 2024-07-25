@@ -31,5 +31,29 @@ namespace TheFirstDescendantAPITests
 
             Assert.NotNull(weapons);
         }
+        [Fact]
+        public async Task GetModules()
+        {
+            MetadataInfo metadataInfo = new MetadataInfo(_loggerFac.CreateLogger<MetadataInfo>());
+            IEnumerable<ModuleMetadata> modules = await metadataInfo.GetModules(_apiClient);
+
+            Assert.NotNull(modules);
+        }
+        [Fact]
+        public async Task GetReactors()
+        {
+            MetadataInfo metadataInfo = new MetadataInfo(_loggerFac.CreateLogger<MetadataInfo>());
+            IEnumerable<ReactorMetadata> reactors = await metadataInfo.GetReactors(_apiClient);
+
+            Assert.NotNull(reactors);
+        }
+        [Fact]
+        public async Task GetExternalComponents()
+        {
+            MetadataInfo metadataInfo = new MetadataInfo(_loggerFac.CreateLogger<MetadataInfo>());
+            IEnumerable<ExternalComponentMetadata> externalComponents = await metadataInfo.GetExternalComponents(_apiClient);
+
+            Assert.NotNull(externalComponents);
+        }
     }
 }
