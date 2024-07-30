@@ -5,11 +5,12 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using TheFirstDescendantAPI.Converters;
+using TheFirstDescendantAPI.Schemas.User;
 
-namespace TheFirstDescendantAPI.Schemas
+namespace TheFirstDescendantAPI.Schemas.Metadata
 {
     [JsonConverter(typeof(SchemeJsonConverter<ExternalComponentMetadata>))]
-    public class ExternalComponentMetadata
+    public class ExternalComponentMetadata : IMetadata
     {
         public string ExternalComponentId { get; set; } = "";
         public string ExternalComponentName { get; set; } = "";

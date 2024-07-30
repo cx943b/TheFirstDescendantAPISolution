@@ -1,10 +1,11 @@
 ﻿using System.Text.Json.Serialization;
 using TheFirstDescendantAPI.Converters;
+using TheFirstDescendantAPI.Schemas.User;
 
-namespace TheFirstDescendantAPI.Schemas
+namespace TheFirstDescendantAPI.Schemas.Metadata
 {
-    [JsonConverter(typeof(SchemeJsonConverter<WeaponMeatadata>))]
-    public class WeaponMeatadata
+    [JsonConverter(typeof(SchemeJsonConverter<WeaponMetadata>))]
+    public class WeaponMetadata : IMetadata
     {
         public string WeaponId { get; set; } = "";
         public string WeaponName { get; set; } = "";

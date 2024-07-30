@@ -6,10 +6,10 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using TheFirstDescendantAPI.Converters;
 
-namespace TheFirstDescendantAPI.Schemas
+namespace TheFirstDescendantAPI.Schemas.Metadata
 {
     [JsonConverter(typeof(SchemeJsonConverter<ReactorMetadata>))]
-    public class ReactorMetadata
+    public class ReactorMetadata : IMetadata
     {
         public string ReactorId { get; set; } = "";
         public string ReactorName { get; set; } = "";

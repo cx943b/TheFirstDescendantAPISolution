@@ -1,10 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 using TheFirstDescendantAPI.Converters;
 
-namespace TheFirstDescendantAPI.Schemas
+namespace TheFirstDescendantAPI.Schemas.Metadata
 {
     [JsonConverter(typeof(SchemeJsonConverter<ModuleMetadata>))]
-    public class ModuleMetadata
+    public class ModuleMetadata : IMetadata
     {
         public string ModuleName { get; set; } = "";
         public string ModuleId { get; set; } = "";

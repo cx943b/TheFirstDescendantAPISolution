@@ -1,4 +1,4 @@
-﻿namespace TheFirstDescendantAPI.Schemas
+﻿namespace TheFirstDescendantAPI.Schemas.User
 {
     public class BaseStat
     {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Web;
-using TheFirstDescendantAPI.Schemas;
+using TheFirstDescendantAPI.Converters;
+using TheFirstDescendantAPI.Schemas.User;
 
 namespace TheFirstDescendantAPI
 {

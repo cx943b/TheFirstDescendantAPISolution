@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TheFirstDescendantAPI;
-using TheFirstDescendantAPI.Schemas;
+using TheFirstDescendantAPI.Schemas.User;
 using Xunit.Abstractions;
 
 namespace TheFirstDescendantAPITests

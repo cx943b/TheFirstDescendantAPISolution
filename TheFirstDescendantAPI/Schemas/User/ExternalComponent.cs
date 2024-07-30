@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using TheFirstDescendantAPI.Converters;
 
-namespace TheFirstDescendantAPI.Schemas
+namespace TheFirstDescendantAPI.Schemas.User
 {
     [JsonConverter(typeof(SchemeJsonConverter<ExternalComponent>))]
     public class ExternalComponent
