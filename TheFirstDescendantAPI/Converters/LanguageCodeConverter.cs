@@ -1,4 +1,4 @@
-﻿namespace TheFirstDescendantAPI
+﻿namespace TheFirstDescendantAPI.Converters
 {
     public class LanguageCodeConverter
     {

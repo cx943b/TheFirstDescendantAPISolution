@@ -8,7 +8,7 @@ namespace TheFirstDescendantAPI
     public abstract class ApiBase
     {
         const string BaseUrl = "https://open.api.nexon.com";
-        protected readonly ILogger? _Logger;
+        protected readonly ILogger _Logger;
 
         protected ApiBase(ILogger logger)
         {

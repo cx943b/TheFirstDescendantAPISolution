@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using TheFirstDescendantAPI.Converters;
 
-namespace TheFirstDescendantAPI.Schemas
+namespace TheFirstDescendantAPI.Schemas.User
 {
     [JsonConverter(typeof(SchemeJsonConverter<UserReactor>))]
     public class UserReactor : User

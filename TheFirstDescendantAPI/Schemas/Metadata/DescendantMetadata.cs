@@ -1,10 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 using TheFirstDescendantAPI.Converters;
 
-namespace TheFirstDescendantAPI.Schemas
+namespace TheFirstDescendantAPI.Schemas.Metadata
 {
-    [JsonConverter(typeof(SchemeJsonConverter<Descendant>))]
-    public class Descendant
+    [JsonConverter(typeof(SchemeJsonConverter<DescendantMetadata>))]
+    public class DescendantMetadata : IMetadata
     {
         public string DescendantId { get; set; } = "";
         public string DescendantName { get; set; } = "";
