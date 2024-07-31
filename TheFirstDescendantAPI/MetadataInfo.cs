@@ -15,7 +15,7 @@ namespace TheFirstDescendantAPI
         {
         }
 
-        public async Task<IEnumerable<TMetadata>> GetMetadata<TMetadata>(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO) where TMetadata : IMetadata
+        public async Task<IEnumerable<TMetadata>?> GetMetadata<TMetadata>(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO) where TMetadata : IMetadata
         {
             ArgumentNullException.ThrowIfNull(apiClient, nameof(apiClient));
 
@@ -34,7 +34,7 @@ namespace TheFirstDescendantAPI
             };
 
             string reqUrl = $"/static/tfd/meta/{LanguageCodeConverter.Convert(langCode)}/{endpoint}.json";
-            return await RequestToApi<IEnumerable<TMetadata>>(apiClient, reqUrl) ?? Enumerable.Empty<TMetadata>();
+            return await RequestToApi<IEnumerable<TMetadata>>(apiClient, reqUrl);
         }
 
         //public async Task<IEnumerable<DescendantMetadata>> GetDescendants(HttpClient apiClient, LanguageCode langCode = LanguageCode.KO)
