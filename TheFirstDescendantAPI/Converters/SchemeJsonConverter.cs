@@ -19,10 +19,11 @@ namespace TheFirstDescendantAPI.Converters
 
             string? propName = null;
 
+            if(reader.TokenType != JsonTokenType.StartObject)
+                throw new JsonException("Invalid JSON format");
+
             while (reader.Read())
             {
-                if (reader.TokenType == JsonTokenType.StartObject)
-                    continue;
                 if (reader.TokenType == JsonTokenType.EndObject)
                     break;
 
